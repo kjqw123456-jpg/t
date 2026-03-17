@@ -57,14 +57,11 @@ function switchMode(mode) {
 
 // Study Mode Logic
 function generateStudyTables() {
-    const colors = ['#ffeaa7', '#81ecec', '#fab1a0', '#55efc4', '#74b9ff', '#a29bfe', '#fd79a8', '#ffeaa7'];
-    
     for (let i = 2; i <= 9; i++) {
         const card = document.createElement('div');
         card.className = 'gugu-card';
-        card.style.borderColor = colors[i - 2];
         
-        let html = `<h2 class="gugu-title" style="color: ${colors[i - 2]}">${i}단</h2>`;
+        let html = `<h2 class="gugu-title">${i}단</h2>`;
         
         for (let j = 1; j <= 9; j++) {
             html += `
@@ -150,7 +147,7 @@ function checkAnswer(selected, btnElement) {
         btnElement.style.borderColor = '#2ecc71';
         btnElement.style.color = 'white';
         
-        feedbackMessage.innerText = '정답입니다! 🎉';
+        feedbackMessage.innerText = '정답입니다!';
         feedbackMessage.className = 'feedback correct';
         
         score += 10;
@@ -184,7 +181,7 @@ function checkAnswer(selected, btnElement) {
              }
         });
 
-        feedbackMessage.innerText = '앗, 다시 생각해보세요! 🤔';
+        feedbackMessage.innerText = '다시 한번 생각해보세요';
         feedbackMessage.className = 'feedback wrong';
         streak = 0;
         
